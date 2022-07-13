@@ -57,6 +57,7 @@ jobs:
 
       - name: Docker tag image
         run: docker tag app ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:latest
+        run: docker tag app ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ github.sha }}
 
       - name: Docker push
         run: docker push ${{ env.REGISTRY }}/${{ env.REPOSITORY }}   
