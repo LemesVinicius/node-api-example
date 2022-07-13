@@ -11,6 +11,6 @@ jobs:
     runs-on: node:14-slim
     steps:
     - name: Install
+    - run: npm ci
       with:
         cache: 'npm'
-    - run: npm ci
