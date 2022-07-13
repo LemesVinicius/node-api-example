@@ -59,7 +59,7 @@ jobs:
         run: docker tag app ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:latest
 
       - name: Docker push
-        run: docker push app ${{ env.REGISTRY }}/${{ env.REPOSITORY }}   
+        run: docker push ${{ env.REGISTRY }}/${{ env.REPOSITORY }}   
 
       # - name: Extract metadata (tags, labels) for Docker
       #   id: meta
