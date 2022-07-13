@@ -56,8 +56,9 @@ jobs:
           echo "REPOSITORY=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}  
 
       - name: Docker tag image
-        run: docker tag app ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:latest
-        run: docker tag app ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ github.sha }}
+        run: |
+          docker tag app ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:latest
+          docker tag app ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ github.sha }}
 
       - name: Docker push
         run: docker push ${{ env.REGISTRY }}/${{ env.REPOSITORY }}   
